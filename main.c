@@ -13,12 +13,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "emulador.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
 
+    imprimirPuertos();
+    maskOff(PUERTOA, 0xFF);
+    imprimirPuertos();
+    
     return (EXIT_SUCCESS);
 }
 
