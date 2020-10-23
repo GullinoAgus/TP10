@@ -67,19 +67,17 @@ void bitClr (uint8_t puerto, uint8_t bit);
  * @param el puerto del cual se desee cambiar el bit como caracter mayuscula A, B o D
  * @param el numero del bit a cambiar. 0-7 para los puertos A y B, 0-15 para el puerto D
 */
-
+void bitToggle (uint8_t puerto, uint8_t bit);
 /**
- * @brief TODO: completar descripcion
- * @param param1 Descripcion parametro 1
- * @param param2 Descripcion parametro 2
- * @return Descripcion valor que devuelve
+ * @brief Dado un puerto y un número de bit, debe cambiar al estado opuesto en el que está (si está en 0 pasar a 1, y si está en 1 pasar a 0).
+ * @param el puerto del cual se desee cambiar el bit como caracter mayuscula A, B o D
+ * @param el numero del bit a cambiar. 0-7 para los puertos A y B, 0-15 para el puerto D
 */
-
+void maskOn(uint8_t puerto, uint16_t mascara);
 /**
- * @brief TODO: completar descripcion
- * @param param1 Descripcion parametro 1
- * @param param2 Descripcion parametro 2
- * @return Descripcion valor que devuelve
+ * @brief Dado un puerto y una máscara, debe prender todos aquellos bits que estén prendidos en la máscara, sin cambiar el estado de los restantes.
+ * @param el puerto del cual se desee cambiar el bit como caracter mayuscula A, B o D
+ * @param La mascara que contiene la informacion de los bits los cuales se desea invertir su estado
 */
 void maskOff(uint8_t puerto, uint16_t mascara);
 /**
