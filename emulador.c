@@ -1,7 +1,7 @@
 /***************************************************************************//**
-  @file     +Nombre del archivo (ej: template.c)+
-  @brief    +Descripcion del archivo+
-  @author   +Nombre del autor (ej: Salvador Allende)+
+  @file     +emulador.c+
+  @brief    +Definicion de funciones y estructuras que utiliza el emulador+
+  @author   +Grupo 1+
  ******************************************************************************/
 
 /*******************************************************************************
@@ -31,7 +31,7 @@ typedef struct{
 	uint8_t	b6 : 1;
 	uint8_t	b7 : 1;
 	
-} bits8_t;
+} bits8_t;                                      //Bitfield de 8 bits para simular un puerto
 
 typedef struct{
 
@@ -52,57 +52,47 @@ typedef struct{
 	uint16_t	b14 : 1;
 	uint16_t	b15 : 1;	
 	
-} bits16_t;
+} bits16_t;                                             //Bitfield para simular el conjunto de dos puertos de 8 bits
 
-typedef union {			//estructura de los puertos A y B
+typedef union {                                         
 
 	bits8_t bits;					//Ejemplo de acceso: puertoD.byte.A.bits
-	uint8_t word;				//Ejemplo de acceso: puertoD.byte.A.word
+	uint8_t word;                                   //Ejemplo de acceso: puertoD.byte.A.word
 
-} puerto_8b;
+} puerto_8b;                                            //Union para crear un puerto de 8 bits con control de byte y de bits
 
-typedef struct {			//estructura de un puerto de 16bits (A y B juntos) 
+typedef struct {                                         
 
         puerto_8b B;
 	puerto_8b A;
 	
-} puerto_16b;
+} puerto_16b;                                           //Estructura de un puerto de 16bits (A y B juntos)
 
-typedef union {					//definicion del puerto D
+typedef union {                                         
 
 	bits16_t bits;			
 	puerto_16b byte;
 	uint16_t word; 
 
-} puerto16bits_t;
-
-
-
-
-/*******************************************************************************
- * VARIABLES WITH GLOBAL SCOPE
- ***************************************************************************
+} puerto16bits_t;                                       //Union de estructua para un puerto de 16 bits, bitfield para coontrol nivel bit y un entero de 16 bits para control de palabra
 
 
 /*******************************************************************************
  * FUNCTION PROTOTYPES FOR PRIVATE FUNCTIONS WITH FILE LEVEL SCOPE
  ******************************************************************************/
-
+/* Funcion para convertir de decimal a binario. Recibe un puntero a un arreglo vacio
+ * con 17 u 9 espacios dependiendo del numero a convertir(uno de los lugares es para el terminador);
+ * tambien se recibe el numero a convertir. Se devuelve el numero convertido a binario en formato string con terminador NULL
+ * en el arreglo pasado. Sol ose manejan numeros que se puedan representar como maximo con 16 bits.
+ */
 static void dec2bin(uint8_t *buffer, uint16_t num);
-
-
-/*******************************************************************************
- * ROM CONST VARIABLES WITH FILE LEVEL SCOPE
- ******************************************************************************/
-
-// +ej: static const int temperaturas_medias[4] = {23, 26, 24, 29};+
 
 
 /*******************************************************************************
  * STATIC VARIABLES AND CONST VARIABLES WITH FILE LEVEL SCOPE
  ******************************************************************************/
 
-static puerto16bits_t puertoD;
+static puerto16bits_t puertoD;                      //Declaracion de la estructura para simulacion del puerto de un microcontrolador
 
 
 /*******************************************************************************
@@ -778,8 +768,8 @@ static void dec2bin(uint8_t *buffer, uint16_t num){
     
     int8_t i;
     
-    if (num < 256){
-        for(i = 7; i >= 0; i--){
+    if (num < 256){                                         //Obtengo el valor de cada bit a traves del resto de dividir por 2
+        for(i = 7; i >= 0; i--){                            //Convierto el valor a caracter y lo apendiso al string.
             buffer[i] = NUM2CHAR(num%2);
             num /= 2;
         }

@@ -6,7 +6,7 @@
 
 /* 
  * File:   main.c
- * Author: agus
+ * Author: Grupo 1
  *
  * Created on October 21, 2020, 2:54 PM
  */
@@ -116,11 +116,27 @@ void printMicro(){
     
     printf("\t       +-----------+\n");
     for(int i = 7; i >= 0; i--){
-        printf("\t-------|           |------- %d\n", bitGet(PUERTOB, i));
+        if (i == 0){
+            printf("\t-------|           |------- %d", bitGet(PUERTOB, i));
+            printf("\t_________\n");
+        }
+        else if (i == 4){
+            printf("\t-------|           |------- %d", bitGet(PUERTOB, i));
+            printf("\tPuerto B\n");
+        }
+        else{
+            printf("\t-------|           |------- %d\n", bitGet(PUERTOB, i));
+        }
     }
     for(int i = 7; i >= 0; i--){
-        printf("\t-------|           |------- %d\n", bitGet(PUERTOA, i));
-    }
+        if (i == 4){
+            printf("\t-------|           |------- %d", bitGet(PUERTOA, i));
+            printf("\tPuerto A\n");
+        }
+        else{
+            printf("\t-------|           |------- %d\n", bitGet(PUERTOA, i));
+        }
+    }    
     printf("\t       +-----------+\n");
 }
 
