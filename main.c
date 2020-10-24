@@ -40,7 +40,11 @@ int main(int argc, char** argv) {
     printMicro();
     
     do{
-        entrada = getchar(); //Leemos la entrada // NOTA: SI SE INGRESA EL NUMERO 25 o tt POR EJEMPLO, EL PROGRAMA LO LEE COMO UN 2 y una t !!!
+        entrada = getchar(); //Leemos la entrada 
+        
+        /*
+         * Nota: El programa lee el caracter siguiente del buffer de getchar, luego descarta los siguientes caracteres ingrasados.
+         */
         
         switch(entrada){
             
@@ -67,7 +71,7 @@ int main(int argc, char** argv) {
                 break;
                 
             case 's':
-                maskOn(PUERTOA, MASKHIGH);              //Si se ingreso un caracter 's', prendemos todos los LEDs 
+                maskOn(PUERTOA, MASKHIGH);              //Si se ingreso un caracter 's', prendemos todos los LEDs
                 printMicro();                           //Actualizamos la interfaz
                 break;
                 
@@ -103,7 +107,7 @@ int main(int argc, char** argv) {
 void mainOptions(){
     printf(" * Ingrese un numero del 0 al 7 para prender los leds del puerto A.\n");
     printf(" * Ingrese una 't' para invertir el estados de todos los leds del puerto A.\n");
-    printf(" * Ingrese una 'c' para apagar todos los leds o una 's' para prenderlos a todos.\n");
+    printf(" * Ingrese una 'c' para apagar todos los leds conectados al puerto A o una 's' para prenderlos a todos ellos.\n");
     printf(" * Ingrese una 'o' para mostrar este menu de opciones nuevamente.\n");
     printf(" * Ingrese una 'q' para finalizar la ejecucion del programa.\n");
 }
