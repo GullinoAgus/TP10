@@ -355,6 +355,224 @@ void bitClr (uint8_t puerto, uint8_t bit){
     }
 }
 
+void bitToggle (uint8_t puerto, uint8_t bit){
+    
+    if (puerto == PUERTOA){   
+        switch(bit){
+            case BIT0:
+                if(bitGet(PUERTOA,BIT0)==ON)
+                    puertoD.byte.A.bits.b0 = OFF;
+                else
+                    puertoD.byte.A.bits.b0 = ON;
+                break;
+            case BIT1:
+                if(bitGet(PUERTOA,BIT1)==ON)
+                    puertoD.byte.A.bits.b1 = OFF;
+                else
+                    puertoD.byte.A.bits.b1 = ON;
+                break;
+            case BIT2:
+                if(bitGet(PUERTOA,BIT2)==ON)
+                    puertoD.byte.A.bits.b2 = OFF;
+                else
+                    puertoD.byte.A.bits.b2 = ON;
+                break;
+            case BIT3:
+                if(bitGet(PUERTOA,BIT3)==ON)
+                    puertoD.byte.A.bits.b3 = OFF;
+                else
+                    puertoD.byte.A.bits.b3 = ON;
+                break;
+            case BIT4:
+                if(bitGet(PUERTOA,BIT4)==ON)
+                    puertoD.byte.A.bits.b4 = OFF;
+                else
+                    puertoD.byte.A.bits.b4 = ON;
+                break;
+            case BIT5:
+                if(bitGet(PUERTOA,BIT5)==ON)
+                    puertoD.byte.A.bits.b5 = OFF;
+                else
+                    puertoD.byte.A.bits.b5 = ON;
+                break;
+            case BIT6:
+                if(bitGet(PUERTOA,BIT6)==ON)
+                    puertoD.byte.A.bits.b6 = OFF;
+                else
+                    puertoD.byte.A.bits.b6 = ON;
+                break;
+            case BIT7:
+                if(bitGet(PUERTOA,BIT7)==ON)
+                    puertoD.byte.A.bits.b7 = OFF;
+                else
+                    puertoD.byte.A.bits.b7 = ON;
+                break;
+            default:        //SI NO SE ESCRIBIO un numero entre 0-7 entonces no hago nada
+                break;
+        }
+    }
+    else if (puerto == PUERTOB){
+        switch(bit){
+            case BIT0:
+                if(bitGet(PUERTOB,BIT0)==ON)
+                    puertoD.byte.B.bits.b0 = OFF;
+                else
+                    puertoD.byte.B.bits.b0 = ON;
+                break;
+            case BIT1:
+                if(bitGet(PUERTOB,BIT1)==ON)
+                    puertoD.byte.B.bits.b1 = OFF;
+                else
+                    puertoD.byte.B.bits.b1 = ON;
+                break;
+            case BIT2:
+                if(bitGet(PUERTOB,BIT2)==ON)
+                    puertoD.byte.B.bits.b2 = OFF;
+                else
+                    puertoD.byte.B.bits.b2 = ON;
+                break;
+            case BIT3:
+                if(bitGet(PUERTOB,BIT3)==ON)
+                    puertoD.byte.B.bits.b3 = OFF;
+                else
+                    puertoD.byte.B.bits.b3 = ON;
+                break;
+            case BIT4:
+                if(bitGet(PUERTOB,BIT4)==ON)
+                    puertoD.byte.B.bits.b4 = OFF;
+                else
+                    puertoD.byte.B.bits.b4 = ON;
+                break;
+            case BIT5:
+                if(bitGet(PUERTOB,BIT5)==ON)
+                    puertoD.byte.B.bits.b5 = OFF;
+                else
+                    puertoD.byte.B.bits.b5 = ON;
+                break;
+            case BIT6:
+                if(bitGet(PUERTOB,BIT6)==ON)
+                    puertoD.byte.B.bits.b6 = OFF;
+                else
+                    puertoD.byte.B.bits.b6 = ON;
+                break;
+            case BIT7:
+                if(bitGet(PUERTOB,BIT7)==ON)
+                    puertoD.byte.B.bits.b7 = OFF;
+                else
+                    puertoD.byte.B.bits.b7 = ON;
+                break;
+            default:     //SI NO SE ESCRIBIO un numero entre 0-7 entonces no hago nada
+                break;
+        }
+        
+    }
+    else if (puerto == PUERTOD){
+        switch(bit){
+            case BIT0:
+                if(bitGet(PUERTOB,BIT0)==ON)
+                    puertoD.bits.b0 = OFF;
+                else
+                    puertoD.bits.b0 = ON;
+                break;
+            case BIT1:
+                if(bitGet(PUERTOB,BIT1)==ON)
+                    puertoD.bits.b1 = OFF;
+                else
+                    puertoD.bits.b1 = ON;
+                break;
+            case BIT2:
+                if(bitGet(PUERTOB,BIT2)==ON)
+                    puertoD.bits.b2 = OFF;
+                else
+                    puertoD.bits.b2 = ON;
+                break;
+            case BIT3:
+                if(bitGet(PUERTOB,BIT3)==ON)
+                    puertoD.bits.b3 = OFF;
+                else
+                    puertoD.bits.b3 = ON;
+                break;
+            case BIT4:
+                if(bitGet(PUERTOB,BIT4)==ON)
+                    puertoD.bits.b4 = OFF;
+                else
+                    puertoD.bits.b4 = ON;
+                break;
+            case BIT5:
+                if(bitGet(PUERTOB,BIT5)==ON)
+                    puertoD.bits.b5 = OFF;
+                else
+                    puertoD.bits.b5 = ON;
+                break;
+            case BIT6:
+                if(bitGet(PUERTOB,BIT6)==ON)
+                    puertoD.bits.b6 = OFF;
+                else
+                    puertoD.bits.b6 = ON;
+                break;
+            case BIT7:
+                if(bitGet(PUERTOB,BIT7)==ON)
+                    puertoD.bits.b7 = OFF;
+                else
+                    puertoD.bits.b7 = ON;
+                break;
+            case BIT8:
+                if(bitGet(PUERTOB,BIT8)==ON)
+                    puertoD.bits.b8 = OFF;
+                else
+                    puertoD.bits.b8 = ON;
+                break;
+            case BIT9:
+                if(bitGet(PUERTOB,BIT9)==ON)
+                    puertoD.bits.b9 = OFF;
+                else
+                    puertoD.bits.b9 = ON;
+                break;
+            case BIT10:
+                if(bitGet(PUERTOB,BIT10)==ON)
+                    puertoD.bits.b10 = OFF;
+                else
+                    puertoD.bits.b10 = ON;
+                break;
+            case BIT11:
+                if(bitGet(PUERTOB,BIT11)==ON)
+                    puertoD.bits.b11 = OFF;
+                else
+                    puertoD.bits.b11 = ON;
+                break;
+            case BIT12:
+                if(bitGet(PUERTOB,BIT12)==ON)
+                    puertoD.bits.b12 = OFF;
+                else
+                    puertoD.bits.b12 = ON;
+                break;
+            case BIT13:
+                if(bitGet(PUERTOB,BIT13)==ON)
+                    puertoD.bits.b13 = OFF;
+                else
+                    puertoD.bits.b13 = ON;
+                break;
+            case BIT14:
+                if(bitGet(PUERTOB,BIT14)==ON)
+                    puertoD.bits.b14 = OFF;
+                else
+                    puertoD.bits.b14 = ON;
+                break;
+            case BIT15:
+                if(bitGet(PUERTOB,BIT15)==ON)
+                    puertoD.bits.b15 = OFF;
+                else
+                    puertoD.bits.b15 = ON;
+                break;
+            default:        //SI NO SE ESCRIBIO un numero entre 0-15 entonces no hago nada
+                break;
+        }
+    }
+    else{
+        //SI NO SE ESCRIBIO A,B o D entonces no hago nada
+    }
+}
+
 uint8_t bitGet(uint8_t puerto, uint8_t bit){
     
     uint8_t lectura = 0xFF;
@@ -482,6 +700,22 @@ uint8_t bitGet(uint8_t puerto, uint8_t bit){
     return lectura;
 }
 
+void maskOn(uint8_t puerto, uint16_t mascara){
+    
+    if(puerto == PUERTOA){
+        puertoD.byte.A.word = puertoD.byte.A.word | ((uint8_t)mascara);
+    }
+    else if(puerto == PUERTOB){
+        puertoD.byte.B.word = puertoD.byte.B.word | ((uint8_t)mascara);
+    }
+    else if (puerto == PUERTOD){
+        puertoD.word = puertoD.word | mascara;
+    }
+    else{
+        //SI NO SE ESCRIBIO A,B o D entonces no hago nada
+    }
+    
+}
 
 void maskOff(uint8_t puerto, uint16_t mascara){
     
